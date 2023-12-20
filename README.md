@@ -8,6 +8,7 @@ please upload model_DatasetLengkap folder in root project
 # Database
 import SQL
 # Depedency
+
 pip install flask
 pip install pandas
 pip install Flask Flask-SQLAlchemy
