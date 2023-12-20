@@ -18,6 +18,5 @@ pip install mysql-connector-python
 
 
 # Running 
-'python app.py'
-
+`python app.py`
 
