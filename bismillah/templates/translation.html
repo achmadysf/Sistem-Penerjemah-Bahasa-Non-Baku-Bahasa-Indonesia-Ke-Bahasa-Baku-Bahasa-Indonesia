@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container card mt-5">
+
+  <form method="post">
+    <div class="">
+      <div class="">
+        <label for="slang_sentence">Slang Sentence</label>
+        <input type="text" name="slang_sentence" placeholder="Silakan masukan kalimat slang" required />
+      </div>
+  
+      <!-- <div class="">
+  
+        <label for="reference_sentence">Reference Sentence:</label>
+        <input type="text" name="reference_sentence" required />
+      
+      </div> -->
+  
+    <button class="cta-btn" type="submit" onclick="showContent('program')">Translate</button>
+  </form>
+  </div>
+</div>
+
+
+{% if translated_sentence %}
+<div class="container card mt-5 p-5">
+  <h2 class="fade-in-text" style="font-weight: bold;">Hasil</h2>
+  <table id="custom-table" style="border-radius: 50%;">
+    <tr>
+      <th>slang sentence</th>
+      <th>Hasil Translate</th>
+    </tr>
+    <tr>
+      <td>{{ slang_sentence }}</td>
+      <td>{{ translated_sentence }}</td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+{% endblock %}

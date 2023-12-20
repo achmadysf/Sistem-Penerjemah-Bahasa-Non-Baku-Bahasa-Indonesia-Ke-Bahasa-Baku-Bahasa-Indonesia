@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+
+<div>
+    <form method="post">
+   
+        <label for="slang_sentence">Slang Sentence:</label>
+        <input type="text" name="slang_sentence" value="{{data.slang_sentence}}" disabled style="background-color: aliceblue;" />
+
+
+        <label for="translate_sentence">Translate Sentence:</label>
+        <input type="text" name="translate_sentence" value="{{data.translate_sentence}}" disabled style="background-color: aliceblue;" />
+
+        <label for="bleu_score">Bleu Score:</label>
+        <input type="text" name="bleu_score" value="{{data.bleu_score}}" disabled style="background-color: aliceblue;" />
+
+
+
+
+        {% if data.bleu_score == None %}
+        <label for="reference_sentence">Reference Sentence:</label>
+        <input type="text" name="reference_sentence" required />
+
+        <button class="cta-btn" type="submit" onclick="showContent('program')">Hitung</button>
+        {% else %}
+        <label for="reference_sentence">Reference Sentence:</label>
+        <input type="text" name="reference_sentence" value="{{data.reference_sentence}}" disabled style="background-color: aliceblue;" />
+        {% endif %}
+      </form>
+</div>
+
+{% endblock %}

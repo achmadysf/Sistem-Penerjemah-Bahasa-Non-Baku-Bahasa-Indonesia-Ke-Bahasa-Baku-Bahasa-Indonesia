@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+  <div class="container mt-lg-5">
+      <div class="box">
+<div class="result">
+  <table id="custom-table" >
+    <tr>
+      <th>id</th>
+      <th>slang sentence</th>
+      <th>translate sentence</th>
+      <th>reference sentence</th>
+      <th>bleu score</th>
+      <th>Actions</th>
+    </tr>
+    {% for data in history %}
+    <tr>
+      <td>{{ data.id }}</td>
+      <td>{{ data.slang_sentence }}</td>
+      <td>{{ data.translate_sentence }}</td>
+      <td>{{ data.reference_sentence }}</td>
+      <td>{{ data.bleu_score }}</td>
+      <td>
+        <a href="{{ url_for('bleuScore',id=data.id) }}" class="btn1">
+           Detail
+        </a>
+      </td>
+    </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}
